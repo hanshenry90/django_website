@@ -1,0 +1,15 @@
+<!--{{ cao }}-->
+
+<img src="{{cao.album_logo}}">
+
+<h1>{{cao.album_title}}</h1>
+<h3>{{cao.artist}}</h3>
+
+<ul>
+    {% for i in cao.song_set.all %}
+
+    <li>{{i.song_title}} - {{i.file_type}}</li>
+    {% endfor %}
+
+
+</ul>

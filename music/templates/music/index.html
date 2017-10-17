@@ -1,0 +1,14 @@
+This is what frontend gives me, I need to plug in my views.py request response.
+This is how it looks in html, for face ie. frontend html page
+
+{% if all_albums %}
+    <h3>Here are all my stuff</h3>
+    <ul>
+        {% for i in all_albums %}
+        <li><a href="/music/{{ i.id }}/">{{ i.album_title }}</a></li>
+        {% endfor %}
+    </ul>
+
+{% else %}
+    <h3>You don't have any albums</h3>
+{% endif %}

@@ -9,4 +9,6 @@ urlpatterns = [
 
     # /music/<album_id>/
     url(r'^(?P<album_id>[0-9]+)/$', views.detail, name='detail'), # 'detail' is the url request pattern: r'^(?P<album_id>[0-9]+)/$', now go find your response in views.detail
+    # /music/<album_id>/favoite
+    url(r'^(?P<album_id>[0-9]+)/favorite/$', views.favorite, name='favorite')
 ]

@@ -5,7 +5,7 @@ This is how it looks in html, for face ie. frontend html page
     <h3>Here are all my stuff</h3>
     <ul>
         {% for i in all_albums %}
-        <li><a href="/music/{{ i.id }}/">{{ i.album_title }}</a></li>
+        <li><a href="{% url 'music:detail' i.id %}">{{ i.album_title }}</a></li>
         {% endfor %}
     </ul>
 

@@ -2,21 +2,21 @@ from django.views import generic
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from . models import Album
 
-class IndexView(generic.ListView):
+class IndexView(generic.ListView): # inherent from type ListView
     template_name='music/index.html'
-    context_object_name='all_albums'
+    context_object_name='all_albums' # override object_list
 
-    def get_queryset(self):
-        return Album.objects.all()
+    def get_queryset(self):         # query the dataset
+        return Album.objects.all()  # return as a object_list
 
 class DetailView(generic.DetailView):
-    model=Album
-    template_name='music/detail.html'
+    model=Album # what model/databaseObject are you trying to get details of?
+    template_name='music/detail.html' # HttpResponse
 
-# a Model form generating
+# Generating a Model form, inherent from CreateView Class
 class AlbumCreate(CreateView):
     model=Album
-    fields=['artist', 'album_title', 'genre', 'album_logo']
+    fields=['artist', 'album_title', 'genre', 'album_logo'] # field is an object used in templates
 
 
 # from django.http import HttpResponse

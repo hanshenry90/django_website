@@ -7,8 +7,9 @@ class Album(models.Model):
     genre = models.CharField(max_length=100)
     album_logo = models.CharField(max_length=1000)
 
+
     def get_absolute_url(self):
-        return reverse('music:detail', kwargs={'pk': self.pk})
+        return reverse('music:detail', kwargs={'pk': self.pk}) # Assigned a PK, no need to add anything, all in automation 
 
     def __str__(self): # a string representation of Album object
         return self.album_title + '-' + self.artist
